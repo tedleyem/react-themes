@@ -116,8 +116,8 @@ export default ({
   landingPages = components.landingPages,
   innerPages = components.innerPages,
   blocks = components.blocks,
-  heading = "Free Modern React Templates for every need.",
-  description = "Easily customizable modern React UI Templates and Components built using TailwindCSS which are also lightweight and simple to setup. All components are modular and fully responsive for great mobile experience as well as big desktop screens.  Brand Colors are also fully customizable. Free for personal as well as commercial use.",
+  heading = "The React Template Project.",
+  description = "Easily customizable modern React UI Templates and Components built to spin up landing pages with ease. Built using TailwindCSS which are also lightweight and simple to setup. All components are modular and fully responsive for great mobile experience as well as big desktop screens.  Brand Colors are also fully customizable. Free for personal as well as commercial use.",
 }) => {
   /*
    * Using gtag like this because we only want to use Google Analytics when Main Landing Page is rendered
@@ -161,34 +161,37 @@ export default ({
           <NavRow>
             <LogoLink href="/">
               <img src={logo} alt="" />
-              placeholder
+              React Template Project
             </LogoLink>
             <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">
               <NavLink
                 target="_blank"
-                href="https://owaiskhan.me/post/free-tailwindcss-react-ui-kit"
+                href=""
               >
                 License & Usage
               </NavLink>
-              <NavLink target="_blank" href="https://owaiskhan.me">
-                Who Am I ?
+              <NavLink target="_blank" href="https://ststeam">
+                Components
               </NavLink>
-              <NavLink target="_blank" href="https://twitter.com/owaiswiz">
-                Twitter
+              <NavLink target="_blank" href="https://ststeam">
+                Features
               </NavLink>
-              <NavLink target="_blank" href="mailto:owaiswiz@gmail.com">
-                Hire Me!
+              <NavLink target="_blank" href="https://twitter.com">
+                About Us
+              </NavLink>
+              <NavLink target="_blank" href="mailto:example@gmail.com">
+                Hire Us!
               </NavLink>
               <div tw="md:hidden flex-100 h-0"></div>
-              <PrimaryNavLink target="_blank" href="https://gum.co/QaruQ">
-                Download Now
+              <PrimaryNavLink target="_blank" href="https://github.com/tedleyem/react-themes/issues">
+                Build Now
               </PrimaryNavLink>
             </div>
           </NavRow>
           <HeroRow>
             <UpdateNotice>
               <UpdateNoticeIcon />
-              Last updated on 10th September, 2022 - Added support for React v18
+              Last updated on June 4, 2024 - Added support for React v18
               and TailwindCSS v3!
             </UpdateNotice>
             <TextColumn>
@@ -223,7 +226,7 @@ export default ({
               We have {noOfLandingPages} premade landing pages. Click on the
               "View Live Demo" button to see them in action. Customizing or
               Creating your own custom landing page is really simple by using
-              our UI components.
+              our RTP Builder.
             </SectionDescription>
             <PreviewCards>
               {Object.entries(landingPages).map(([pageName, page], index) => (
