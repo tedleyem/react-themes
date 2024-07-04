@@ -18,7 +18,7 @@ import ShieldIconImage from "images/shield-icon.svg";
 import CustomizeIconImage from "images/customize-icon.svg";
 import FastIconImage from "images/fast-icon.svg";
 import ReliableIconImage from "images/reliable-icon.svg";
-import SimpleIconImage from "images/simple-icon.svgz";
+import SimpleIconImage from "images/simple-icon.svg";
 
 const Container = tw.div`relative`;
 
