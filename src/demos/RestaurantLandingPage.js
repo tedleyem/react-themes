@@ -16,9 +16,9 @@ import celebrationIconImageSrc from "images/celebration-icon.svg";
 import shopIconImageSrc from "images/shop-icon.svg";
 
 export default () => {
-  const Subheading = tw.span`tracking-wider text-sm font-medium`;
-  const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
-  const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
+  const Subheading = tw.span`tracking-wider text-red-500 text-sm font-medium`;
+  const HighlightedText = tw.span`bg-red-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedTextInverse = tw.span`bg-gray-100 text-red-500 px-4 transform -skew-x-12 inline-block`;
   const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
   return (
@@ -35,6 +35,7 @@ export default () => {
         imageCss={imageCss}
         imageDecoratorBlob={true}
         primaryButtonText="Order Now"
+        bgColor="bg-red-500"
         watchVideoButtonText="Meet The Chefs"
       />
       <MainFeature
@@ -55,6 +56,7 @@ export default () => {
             nisi ut aliquip ex ea commodo consequat.
           </Description>
         }
+        bgColor="bg-red-500"
         buttonRounded={false}
         textOnLeft={false}
         primaryButtonText="Latest Offers"
@@ -67,6 +69,7 @@ export default () => {
       />
       {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
       <TabGrid
+        bgColor="bg-red-500"
         heading={
           <>
             Checkout our <HighlightedText>menu.</HighlightedText>
@@ -123,6 +126,7 @@ export default () => {
             value: "1500+",
           },
         ]}
+        bgColor="bg-red-500"
         primaryButtonText="Order Now"
         primaryButtonUrl="https://order.now.com"
         imageInsideDiv={false}
