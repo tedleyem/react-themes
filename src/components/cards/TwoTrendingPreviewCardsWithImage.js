@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading } from "components/misc/Headings.js";
 import { PrimaryLink as PrimaryLinkBase } from "components/misc/Links.js";
-import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
+// import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { ReactComponent as LocationIcon } from "feather-icons/dist/icons/map-pin.svg";
 import { ReactComponent as TimeIcon } from "feather-icons/dist/icons/clock.svg";
 import { ReactComponent as TrendingIcon } from "feather-icons/dist/icons/trending-up.svg";
@@ -22,22 +22,22 @@ const HeadingInfoContainer = tw.div`text-center xl:text-left max-w-lg xl:max-w-n
 const HeadingTitle = tw(SectionHeading)`xl:text-left leading-tight`;
 const HeadingDescription = tw.p`text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100 mt-8`;
 const PrimaryLink = styled(PrimaryLinkBase)`
-  ${tw`inline-flex justify-center xl:justify-start items-center mt-8 text-lg`}
+  ${tw`inline-flex justify-center xl:justify-start items-center mt-8 text-lg text-yellow-500`}
   svg {
-    ${tw`ml-2 w-5 h-5`}
+    ${tw`ml-2 w-5 h-5 text-yellow-500`}
   }
 `;
 
 const Card = tw.div`mx-auto xl:mx-0 xl:ml-auto max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-xs`;
-const CardImage = styled.div(props => [
+const CardImage = styled.div((props) => [
   `background-image: url("${props.imageSrc}");`,
-  tw`h-80 bg-cover bg-center rounded`
+  tw`h-80 bg-cover bg-center rounded`,
 ]);
 
 const CardText = tw.div`mt-4`;
 
 const CardHeader = tw.div`flex justify-between items-center`;
-const CardType = tw.div`text-primary-500 font-bold text-lg`;
+const CardType = tw.div`text-yellow-500 font-bold text-lg`;
 const CardPrice = tw.div`font-semibold text-sm text-gray-600`;
 const CardPriceAmount = tw.span`font-bold text-gray-800 text-lg`;
 
@@ -53,9 +53,17 @@ const CardMetaFeature = styled.div`
     ${tw`w-5 h-5 mr-1`}
   }
 `;
-const CardAction = tw(PrimaryButtonBase)`w-full mt-8`;
+// const CardAction = tw(PrimaryButtonBase)`w-full mt-8`;
 
-export default () => {
+const CardAction = styled.button(({ bgColor }) => [
+  tw`mt-8 w-full md:mt-8 text-sm inline-block mx-auto md:mx-0 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300 px-8 py-3 font-bold rounded bg-primary-500 text-gray-100`,
+  bgColor === "bg-yellow-500" ? tw`bg-yellow-500` : tw`bg-primary-500`,
+  bgColor === "bg-yellow-500"
+    ? tw`hocus:bg-yellow-700`
+    : tw`hocus:bg-primary-700`,
+]);
+
+export default ({ bgColor = "bg-primary-500" }) => {
   const cards = [
     {
       imageSrc:
@@ -65,7 +73,7 @@ export default () => {
       title: "A Trip to the Bahamas and the Carribean Ocean",
       trendingText: "Trending",
       durationText: "7 Days Tour",
-      locationText: "Africa"
+      locationText: "Africa",
     },
     {
       imageSrc:
@@ -75,8 +83,8 @@ export default () => {
       title: "Cruise to the Mariana Trench and the Phillipines",
       trendingText: "Trending",
       durationText: "15 Days Tour",
-      locationText: "Australia"
-    }
+      locationText: "Australia",
+    },
   ];
   return (
     <Container>
@@ -86,10 +94,11 @@ export default () => {
             <HeadingInfoContainer>
               <HeadingTitle>Trending Tours</HeadingTitle>
               <HeadingDescription>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua enim ad minim veniam.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua enim
+                ad minim veniam.
               </HeadingDescription>
-              <PrimaryLink>
+              <PrimaryLink bgColor={bgColor}>
                 View All Tours <ArrowRightIcon />
               </PrimaryLink>
             </HeadingInfoContainer>
@@ -102,7 +111,8 @@ export default () => {
                   <CardHeader>
                     <CardType>{card.type}</CardType>
                     <CardPrice>
-                      <CardPriceAmount>{card.pricePerDay}</CardPriceAmount> per day
+                      <CardPriceAmount>{card.pricePerDay}</CardPriceAmount> per
+                      day
                     </CardPrice>
                   </CardHeader>
                   <CardTitle>{card.title}</CardTitle>
@@ -117,7 +127,7 @@ export default () => {
                       <LocationIcon /> {card.locationText}
                     </CardMetaFeature>
                   </CardMeta>
-                  <CardAction>Book Now</CardAction>
+                  <CardAction bgColor={bgColor}>Book Now</CardAction>
                 </CardText>
               </Card>
             </CardColumn>

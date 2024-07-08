@@ -15,11 +15,11 @@ export default () => (
   <AnimationRevealPage>
     <Hero />
     <Features />
-    <SliderCard />
-    <TrendingCard />
+    <SliderCard bgColor="bg-yellow-500" />
+    <TrendingCard bgColor="bg-yellow-500" />
     <MainFeature />
     <Blog />
-    <Testimonial textOnLeft={true}/>
+    <Testimonial textOnLeft={true} />
     <FAQ />
     <SubscribeNewsLetterForm />
     <Footer />
