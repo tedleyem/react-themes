@@ -42,7 +42,7 @@ const Card = styled.a`
   }
 
   .link {
-    ${tw`mt-auto inline-flex items-center pt-5 text-sm font-bold leading-none text-red-300 hocus:text-primary-900 transition duration-300`}
+    ${tw`mt-auto inline-flex items-center pt-5 text-sm font-bold leading-none text-gray-500 hocus:text-gray-700 transition duration-300`}
     .icon {
       ${tw`ml-2 w-4`}
     }
